@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">QurApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="tafsir">Tafsir</string>
+    <string name="surah">Surah</string>
+    <string name="numberSurah">1</string>
+    <string name="namaLatinSurah">Al-Fatihah</string>
+    <string name="artiSurah">Pembukaan</string>
+    <string name="jumlahAyat">7 Ayat</string>
+    <string name="namaHijri">الفاتحة</string>
+    <string name="namaHijaiyahSurah">الفاتحة</string>
+    <string name="detail_activity_name">Detail Activity</string>
+    <string name="num_ayah">01</string>
+    <string name="teks_arabic">يٰٓاَيُّهَا الَّذِيْنَ اٰمَنُوْٓا اَوْفُوْا بِالْعُقُوْدِۗ  اُحِلَّتْ لَكُمْ بَهِيْمَةُ الْاَنْعَامِ اِلَّا مَا يُتْلٰى عَلَيْكُمْ غَيْرَ مُحِلِّى الصَّيْدِ وَاَنْتُمْ حُرُمٌۗ  اِنَّ اللّٰهَ يَحْكُمُ مَا يُرِيْدُ</string>
+    <string name="teks_latin">Yā ayyuhal-lażīna āmanū aufū bil-‘uqūd(i), uḥillat lakum bahīmatul-an‘āmi illā mā yutlā ‘alaikum gaira muḥilliṣ-ṣaidi wa antum ḥurum(un), innallāha yaḥkumu mā yurīd(u).</string>
+    <string name="jadwalShalatTitle">Jadwal Shalat</string>
+    <string name="shalatName">Subuh</string>
+    <string name="shalatTime">04:30</string>
+    <string name="quranTitle">QURAN</string>
+    <string name="tvSurah">Al-Fatihah</string>
+    <string name="tempat_turun">Makkah</string>
+    <string name="iconDot">•</string>
+    <string name="basmallah">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِي</string>
+    <string name="line">-----------------</string>
+    <string name="menu">Menu</string>
+    <string name="menuQuran">Quran</string>
+    <string name="menuTafsir">Tafsir</string>
+    <string name="welcome">Selamat datang!</string>
+    <string name="username">Dzaky Zaidan</string>
+    <string name="greeting">Baca Al-Quran hari ini</string>
+    <string name="bacaSekarang">Baca Sekarang</string>
+    <string name="ayatHariIni">Ayat hari ini!</string>
+    <string name="artiAyat">\"Sesungguhnya bersama kesulitan pasti ada kemudahan\"</string>
+    <string name="namaSurahHari">QS: Al-Fatihah: 6</string>
+    <string name="daftarSurah">Daftar surah</string>
+    <string name="AlQuran">Al-Qur\'an</string>
+    <string name="greetingBacaQuran">Baca Al-Quran hari ini</string>
+    <string name="tafsirGreeting">Pahami makna setiap ayat</string>
+    <string name="tafsirMenu">Tafsir</string>
+    <string name="tafsirSurahTitle">Tafsir Surah</string>
+    <string name="pilihSurah">Pilih surah terlebih dahulu</string>
+    <string name="pilihSurahDropdown">Pilih surah</string>
+    <string name="tvTitleNumAyah">Ayat 01</string>
+    <string name="tafsirDeskripsi">Alif Lam Mim. Ayat pertama surah Al-Baqarah ini terdiri dari huruf-huruf lepas.</string>
+</resources>

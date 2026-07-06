@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#1F1F1F</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="orangePrimary">#FFB030</color>
+    <color name="choclateSecondary">#874D14</color>
+    <color name="orangeBackground">#fcefcf</color>
+
+<!--    design ui ref-->
+    <color name="primary">#FF7A00</color>
+    <color name="primaryLight">#FFF4EA</color>
+    <color name="primaryDark">#E56500</color>
+    <color name="background">#FAF8F5</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="textPrimary">#222222</color>
+    <color name="textSecondary">#666666</color>
+    <color name="divider">#EEEEEE</color>
+
+</resources>

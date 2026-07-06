@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home_24px"
+        android:title="@string/home"/>
+
+    <item
+        android:id="@+id/nav_surah"
+        android:icon="@drawable/menu_book_24px"
+        android:title="@string/surah"/>
+
+    <item
+        android:id="@+id/nav_tafsir"
+        android:icon="@drawable/dictionary_24px"
+        android:title="@string/tafsir"/>
+
+
+</menu>
