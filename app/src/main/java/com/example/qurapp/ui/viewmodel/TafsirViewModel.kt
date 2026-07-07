@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import com.example.qurapp.response.Data
 import com.example.qurapp.response.DataItem
 import com.example.qurapp.response.SurahResponse
+import com.example.qurapp.response.TafsirData
 import com.example.qurapp.response.TafsirItem
 import com.example.qurapp.response.TafsirResponse
 import com.example.qurapp.retrofit.ApiConfig
@@ -20,8 +21,11 @@ class TafsirViewModel : ViewModel(){
     val surah : LiveData<List<DataItem>> = _surah
 
 //    tafsir list
-    private val _tafsir = MutableLiveData<List<TafsirItem>>()
-    val tafsir: LiveData<List<TafsirItem>> = _tafsir
+//    private val _tafsir = MutableLiveData<List<TafsirItem>>()
+//    val tafsir: LiveData<List<TafsirItem>> = _tafsir
+
+    private val _tafsir = MutableLiveData<TafsirData>()
+    val tafsir: LiveData<TafsirData> = _tafsir
 
     companion object {
         private val TAG = "TafsirViewModel"
@@ -65,8 +69,10 @@ fun findTafsir(id : Int) {
             response: Response<TafsirResponse?>
         ) {
             if (response.isSuccessful) {
-                _tafsir.value = response.body()?.data?.tafsir
+//                _tafsir.value = response.body()?.data?.tafsir
+                _tafsir.value = response.body()?.data
             }
+
         }
 
         override fun onFailure(

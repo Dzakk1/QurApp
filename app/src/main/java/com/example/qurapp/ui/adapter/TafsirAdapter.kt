@@ -12,8 +12,8 @@ import com.example.qurapp.response.TafsirItem
 class TafsirAdapter : ListAdapter<TafsirItem, TafsirAdapter.MyViewHolder>(DIFF_CALLBACK) {
     class MyViewHolder(val binding: TafsirItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(tafsir : TafsirItem) {
-            binding.tvTitleNumAyah.text = "Ayat" + tafsir.ayat.toString()
-            binding.tvTafsir.text = tafsir.teks.toString()
+            binding.tvTitleNumAyah.text = "Ayat " + tafsir.ayat.toString()
+            binding.tvTafsir.text = tafsir.teks
         }
     }
 

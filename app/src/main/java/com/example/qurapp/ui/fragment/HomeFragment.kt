@@ -55,6 +55,7 @@ class HomeFragment : Fragment() {
         binding.rvHomeMenu.addItemDecoration(itemDecoration)
 
 
+
         adapter.submitList(
             listOf(
                 HomeMenu(

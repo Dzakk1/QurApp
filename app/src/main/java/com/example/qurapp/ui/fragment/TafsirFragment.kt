@@ -53,6 +53,8 @@ class TafsirFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        showEmptyTafsir()
+
         val layoutManager = LinearLayoutManager(requireContext())
         binding.rvSurahTafsir.layoutManager = layoutManager
 
@@ -64,8 +66,15 @@ class TafsirFragment : Fragment() {
 
 
 //        viewmodel
-        tafsirViewModel.tafsir.observe(viewLifecycleOwner) { tafsirItem ->
-            setTafsirData(tafsirItem)
+        tafsirViewModel.tafsir.observe(viewLifecycleOwner) { tafsirData ->
+//            setTafsirData(tafsirItem)
+            showTafsir()
+
+            binding.tvSurahName.text = tafsirData.namaLatin
+            binding.tvArtiSurah.text = tafsirData.arti
+            binding.tvJumlahAyahTafsir.text = "${tafsirData.jumlahAyat} Ayat"
+
+            adapter.submitList(tafsirData.tafsir)
         }
 
 //        surahDropDown()
@@ -100,14 +109,22 @@ class TafsirFragment : Fragment() {
 
     }
 
+
+
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
     }
 
-//    data tafsir
-    fun setTafsirData(tafsir : List<TafsirItem>) {
-        adapter.submitList(tafsir)
+
+    private fun showEmptyTafsir() {
+        binding.tvAlertChoiceSurah.visibility = View.VISIBLE
+        binding.cardTafsirData.visibility = View.GONE
+    }
+
+    private fun showTafsir() {
+        binding.tvAlertChoiceSurah.visibility = View.GONE
+        binding.cardTafsirData.visibility = View.VISIBLE
     }
 
 
