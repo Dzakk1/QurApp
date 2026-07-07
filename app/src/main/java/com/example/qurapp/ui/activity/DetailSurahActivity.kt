@@ -29,14 +29,15 @@ class DetailSurahActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
+
+
         binding = ActivityDetailSurahBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        emptyData()
+
 //        get id
         val id = intent.getIntExtra(surahID, -1)
-//        id?.let {
-//            viewModel.detailSurah(it)
-//        }
 
         if (id == -1) {
             Toast.makeText(
@@ -65,6 +66,7 @@ class DetailSurahActivity : AppCompatActivity() {
 
         viewModel.detailSurah.observe(this) {detailSurah ->
             showLoading(false)
+            showData()
 
             binding.tvSurahName.text = detailSurah.namaLatin
             binding.tvArtiSurah.text = detailSurah.arti
@@ -82,10 +84,15 @@ class DetailSurahActivity : AppCompatActivity() {
 
         Log.d("Detail Surah Actvity", "Id surah = $id")
 
-
-
     }
 
+    private fun emptyData() {
+        binding.cardView2.visibility = View.GONE
+    }
+
+    private fun showData() {
+        binding.cardView2.visibility = View.VISIBLE
+    }
 
     private fun showLoading(isLoading : Boolean) {
         if (isLoading) {

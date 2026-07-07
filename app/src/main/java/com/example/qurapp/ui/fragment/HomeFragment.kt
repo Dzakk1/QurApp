@@ -9,6 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.example.qurapp.R
 import com.example.qurapp.databinding.FragmentHomeBinding
 import com.example.qurapp.ui.adapter.HomeMenuAdapter
@@ -54,6 +55,10 @@ class HomeFragment : Fragment() {
         val itemDecoration = DividerItemDecoration(requireContext(), layoutManager.orientation)
         binding.rvHomeMenu.addItemDecoration(itemDecoration)
 
+        Glide.with(this)
+            .load(R.drawable.avatar)
+            .circleCrop()
+            .into(binding.ivPhotoProfile)
 
 
         adapter.submitList(
@@ -87,7 +92,9 @@ class HomeFragment : Fragment() {
                     "Bookmark",
                     R.drawable.bookmark_20px,
                     R.drawable.menu_bg_pink
-                )
+                ),
+
+
 
             )
         )

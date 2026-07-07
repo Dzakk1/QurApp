@@ -17,4 +17,10 @@
         android:title="@string/tafsir"/>
 
 
+    <item
+        android:id="@+id/nav_doa"
+        android:icon="@drawable/folded_hands_20px"
+        android:title="@string/doa"/>
+
+
 </menu>

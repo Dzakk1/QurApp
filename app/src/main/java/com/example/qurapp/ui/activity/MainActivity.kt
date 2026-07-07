@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ReportFragment
 import com.example.qurapp.R
 import com.example.qurapp.databinding.ActivityMainBinding
+import com.example.qurapp.ui.fragment.DoaFragment
 import com.example.qurapp.ui.fragment.HomeFragment
 import com.example.qurapp.ui.fragment.SurahFragment
 import com.example.qurapp.ui.fragment.TafsirFragment
@@ -52,6 +53,12 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_tafsir -> {
                     replaceFragment(TafsirFragment())
                     supportActionBar?.title = "Tafsir"
+                    true
+                }
+
+                R.id.nav_doa -> {
+                    replaceFragment(DoaFragment())
+                    supportActionBar?.title = "Doa"
                     true
                 }
 
