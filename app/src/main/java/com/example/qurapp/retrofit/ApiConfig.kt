@@ -14,7 +14,7 @@ class ApiConfig {
                 .addInterceptor(loggingInterceptor)
                 .build()
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://equran.id/api/v2/")
+                .baseUrl("https://equran.id/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()
@@ -22,3 +22,6 @@ class ApiConfig {
         }
     }
 }
+
+//https://equran.id/api/v2/surat
+//https://equran.id/api/doa

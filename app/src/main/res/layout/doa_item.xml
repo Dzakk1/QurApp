@@ -1,70 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardView"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
-    android:padding="8dp"
-    android:backgroundTint="@color/white"
-    card_view:cardCornerRadius="8dp">
-
+    android:layout_height="88dp"
+    android:layout_marginVertical="6dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingHorizontal="16dp">
 
-        <FrameLayout
-            android:id="@+id/frameLayout"
-            android:layout_width="80dp"
-            android:layout_height="match_parent"
-            card_view:layout_constraintBottom_toBottomOf="parent"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent">
+        <!-- Icon Background -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardIcon"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            app:cardBackgroundColor="#FFF3E8"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/ivDoaItemIcon"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
                 android:layout_gravity="center"
-                android:src="@drawable/book_ribbon_24px"/>
+                android:src="@drawable/book_ribbon_24px"
+                android:tint="@color/orangePrimary" />
 
-        </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
 
+        <!-- Nama Doa -->
         <TextView
             android:id="@+id/tvNamaDoa"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/namaDoa"
+            android:layout_marginStart="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:fontFamily="@font/poppinsbold"
+            android:text="Doa Sebelum Tidur"
+            android:textColor="@color/orangePrimary"
             android:textSize="16sp"
-            card_view:layout_constraintStart_toEndOf="@+id/frameLayout"
-            card_view:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@id/tvGroupDoa"
+            app:layout_constraintEnd_toStartOf="@id/ivDetailIcon"
+            app:layout_constraintStart_toEndOf="@id/cardIcon"
+            app:layout_constraintTop_toTopOf="@id/cardIcon"
+            app:layout_constraintVertical_chainStyle="packed"/>
 
+        <!-- Kategori -->
         <TextView
             android:id="@+id/tvGroupDoa"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/kategoriDoa"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:fontFamily="@font/poppins_medium"
-            android:textSize="12sp"
-            card_view:layout_constraintStart_toEndOf="@+id/frameLayout"
-            card_view:layout_constraintTop_toBottomOf="@+id/tvNamaDoa" />
+            android:text="Doa Harian"
+            android:textColor="#8A8A8A"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toStartOf="@id/ivDetailIcon"
+            app:layout_constraintStart_toStartOf="@id/tvNamaDoa"
+            app:layout_constraintTop_toBottomOf="@id/tvNamaDoa"/>
 
+        <!-- Arrow -->
         <ImageView
             android:id="@+id/ivDetailIcon"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:src="@drawable/round_chevron_right_24"
-            card_view:layout_constraintBottom_toBottomOf="parent"
-            card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent" />
-
-
+            android:tint="@color/orangePrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,108 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="88dp"
+    android:layout_marginVertical="6dp"
     android:clickable="true"
     android:focusable="true"
-    android:layout_width="match_parent"
-    android:layout_height="80dp"
-    android:padding="8dp"
-    android:backgroundTint="@color/white"
-    card_view:cardCornerRadius="8dp">
-
+    android:foreground="?attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <FrameLayout
-            android:id="@+id/frameLayout"
-            android:layout_width="80dp"
-            android:layout_height="match_parent"
-            card_view:layout_constraintBottom_toBottomOf="parent"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent">
-
-<!--            <ImageView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:scaleType="centerInside"-->
-<!--                android:src="@drawable/brightness_empty_24px" />-->
+        <!-- Circle Number -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardNumber"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            app:cardBackgroundColor="#FFF3E8"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/tvNomorSurah"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:fontFamily="@font/poppinsblacks"
-                android:textColor="@color/black"
                 android:text="1"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </FrameLayout>
+                android:textColor="@color/orangePrimary"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppinsbold"/>
 
+        </com.google.android.material.card.MaterialCardView>
 
+        <!-- Nama Latin -->
         <TextView
             android:id="@+id/tvNamaLatinSurah"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Al-Fatihah"
+            android:textColor="@color/orangePrimary"
+            android:textSize="17sp"
             android:fontFamily="@font/poppinsbold"
-            android:text="@string/namaLatinSurah"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            card_view:layout_constraintStart_toEndOf="@+id/frameLayout"
-            card_view:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@id/cardNumber"
+            app:layout_constraintTop_toTopOf="@id/cardNumber"
+            app:layout_constraintEnd_toStartOf="@id/tvNamaSurahHijaiyah"/>
 
+        <!-- Arti -->
         <TextView
             android:id="@+id/tvArtiSurah"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/artiSurah"
-            android:textColor="@color/choclateSecondary"
+            android:text="Pembukaan"
+            android:textColor="@color/grey"
+            android:textSize="13sp"
             android:fontFamily="@font/poppinsregular"
-            card_view:layout_constraintStart_toStartOf="@+id/tvNamaLatinSurah"
-            card_view:layout_constraintTop_toBottomOf="@+id/tvNamaLatinSurah" />
+            app:layout_constraintStart_toStartOf="@id/tvNamaLatinSurah"
+            app:layout_constraintTop_toBottomOf="@id/tvNamaLatinSurah"/>
 
-        <ImageView
-            android:id="@+id/ivCircleIcon"
-            android:layout_width="5dp"
-            android:layout_height="5dp"
-            android:layout_marginStart="5dp"
-            android:src="@drawable/circle_24px"
-            card_view:layout_constraintBottom_toBottomOf="@+id/tvArtiSurah"
-            card_view:layout_constraintStart_toEndOf="@+id/tvArtiSurah"
-            card_view:layout_constraintTop_toBottomOf="@+id/tvNamaLatinSurah" />
+        <!-- Dot -->
+        <View
+            android:id="@+id/dot"
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:layout_marginHorizontal="8dp"
+            android:background="@drawable/bg_circle_grey"
+            app:layout_constraintBottom_toBottomOf="@id/tvArtiSurah"
+            app:layout_constraintStart_toEndOf="@id/tvArtiSurah"
+            app:layout_constraintTop_toTopOf="@id/tvArtiSurah"/>
 
-
+        <!-- Jumlah Ayat -->
         <TextView
             android:id="@+id/tvJumlahAyat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:text="@string/jumlahAyat"
-            android:textColor="@color/choclateSecondary"
+            android:layout_marginStart="8dp"
             android:fontFamily="@font/poppinsregular"
-            card_view:layout_constraintBottom_toBottomOf="@+id/tvArtiSurah"
-            card_view:layout_constraintStart_toEndOf="@+id/ivCircleIcon"
-            card_view:layout_constraintTop_toBottomOf="@+id/tvNamaLatinSurah" />
+            android:text="7 Ayat"
+            android:textColor="@color/grey"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvArtiSurah"
+            app:layout_constraintStart_toEndOf="@id/dot"
+            app:layout_constraintTop_toTopOf="@id/tvArtiSurah" />
 
+        <!-- Nama Arab -->
         <TextView
             android:id="@+id/tvNamaSurahHijaiyah"
-            android:layout_width="80dp"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="5dp"
-            android:gravity="center"
-            android:text="@string/namaHijaiyahSurah"
-            android:textSize="25sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
             android:fontFamily="@font/poppinsregular"
+            android:text="الفاتحة"
             android:textColor="@color/black"
-            card_view:layout_constraintBottom_toBottomOf="parent"
-            card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent" />
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

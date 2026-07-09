@@ -74,7 +74,5 @@ class SurahFragment : Fragment() {
             binding.progressBar.visibility = View.GONE
         }
     }
-//    companion object {
-//
-//    }
+
 }
