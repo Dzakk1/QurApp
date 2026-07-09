@@ -21,5 +21,8 @@ interface ApiService {
     fun getSurahTafsir(@Path("id" ) id : Int) : Call<TafsirResponse>
 
     @GET("doa")
-    fun getAllDoa() : Call<DoaResponse>
+    fun getAllDoa(
+        @Query("grup") grup : String? = null,
+        @Query("tag") tag : String? = null
+    ) : Call<DoaResponse>
 }

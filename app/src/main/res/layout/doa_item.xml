@@ -22,7 +22,7 @@
             android:id="@+id/cardIcon"
             android:layout_width="52dp"
             android:layout_height="52dp"
-            app:cardBackgroundColor="#FFF3E8"
+            app:cardBackgroundColor="@color/orangeYellowBg"
             app:cardCornerRadius="14dp"
             app:cardElevation="0dp"
             app:layout_constraintBottom_toBottomOf="parent"

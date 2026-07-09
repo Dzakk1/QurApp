@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -39,11 +40,17 @@ class DoaFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         val layoutManager = LinearLayoutManager(requireContext())
         binding.rvDoa.layoutManager = layoutManager
 
         adapter = DoaAdapter()
         binding.rvDoa.adapter = adapter
+
+
+
+//        try - search
+
 
         val itemDecoration = DividerItemDecoration(requireContext(), layoutManager.orientation)
         binding.rvDoa.addItemDecoration(itemDecoration)
@@ -55,6 +62,20 @@ class DoaFragment : Fragment() {
         doaViewmodel.isLoading.observe(viewLifecycleOwner) {
             showLoading(it)
         }
+
+//        try search event
+
+        binding.etSearch.doAfterTextChanged { text ->
+
+            val searchKeyword = text.toString().trim()
+
+            if (searchKeyword.isEmpty()) {
+                doaViewmodel.findAllDoa()
+            } else {
+                doaViewmodel.searchDoaByGroup(searchKeyword)
+            }
+        }
+//        end try
     }
 
 

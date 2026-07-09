@@ -48,4 +48,6 @@
     <string name="searchbar_hint">Cari Doa...</string>
     <string name="namaDoa">Doa Sebelum Tidur</string>
     <string name="kategoriDoa">Doa Tidur</string>
+    <string name="cariDoa">Cari doa...</string>
+    <string name="doaDesc">Temukan doa harian dengan mudah</string>
 </resources>

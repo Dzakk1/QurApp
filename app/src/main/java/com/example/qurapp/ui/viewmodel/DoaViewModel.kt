@@ -29,7 +29,7 @@ class DoaViewModel : ViewModel() {
         }
     }
 
-    private fun findAllDoa() {
+    fun findAllDoa() {
         _isLoading.value = true
         val client = ApiConfig.getApiSevice().getAllDoa()
         client.enqueue(object  : Callback<DoaResponse> {
@@ -47,9 +47,36 @@ class DoaViewModel : ViewModel() {
                 call: Call<DoaResponse?>,
                 t: Throwable
             ) {
-                Log.e(TAG, "Gagal : ${t.message.toString()}")
+                Log.e(TAG, "Gagal Semua Doa : ${t.message.toString()}")
             }
 
         })
     }
+
+     fun searchDoaByGroup(grup : String) {
+        _isLoading.value = true
+        val client = ApiConfig.getApiSevice().getAllDoa(grup = grup)
+        client.enqueue(object  : Callback <DoaResponse> {
+            override fun onResponse(
+                call: Call<DoaResponse?>,
+                response: Response<DoaResponse?>
+            ) {
+                _isLoading.value = false
+                if (response.isSuccessful) {
+                    _doa.value = response.body()?.data
+                }
+            }
+
+            override fun onFailure(
+                call: Call<DoaResponse?>,
+                t: Throwable
+            ) {
+                _isLoading.value = false
+                Log.e(TAG, "Gagal Search Doa: ${t.message.toString()}")
+            }
+
+        })
+    }
+
+//    try search doa
 }

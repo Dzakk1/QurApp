@@ -13,7 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/white"
-        android:elevation="0dp">
+        android:elevation="0dp"
+        app:liftOnScroll="false"
+        app:liftOnScrollColor="@android:color/transparent">
 
         <LinearLayout
             android:id="@+id/headerLayout"
@@ -30,7 +32,7 @@
                 android:id="@+id/tvTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Doa"
+                android:text="@string/doa"
                 android:textColor="@color/primary"
                 android:textSize="30sp"
                 android:fontFamily="@font/poppinsbold"/>
@@ -39,23 +41,63 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Temukan doa harian dengan mudah"
+                android:text="@string/doaDesc"
                 android:textColor="#7A7A7A"
                 android:textSize="14sp"
                 android:fontFamily="@font/poppinsregular"/>
 
         </LinearLayout>
 
-        <com.google.android.material.search.SearchBar
-            android:id="@+id/searchBar"
+<!--        <com.google.android.material.search.SearchBar-->
+<!--            android:id="@+id/searchBar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="16dp"-->
+<!--            android:layout_marginBottom="12dp"-->
+<!--            android:hint="Cari doa..."-->
+<!--            app:strokeWidth="0dp"-->
+<!--            app:backgroundTint="#FFF3E8"/>-->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginBottom="12dp"
-            android:hint="Cari doa..."
-            app:strokeWidth="0dp"
-            app:backgroundTint="#FFF3E8"/>
+            android:layout_marginBottom="8dp"
 
+            app:boxBackgroundMode="filled"
+            app:boxBackgroundColor="@color/orangeYellowBg"
+
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+
+            app:boxCornerRadiusTopStart="28dp"
+            app:boxCornerRadiusTopEnd="28dp"
+            app:boxCornerRadiusBottomStart="28dp"
+            app:boxCornerRadiusBottomEnd="28dp"
+
+            app:startIconDrawable="@drawable/search_24px"
+            app:startIconTint="@color/orangePrimary"
+
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+
+                android:background="@null"
+
+                android:hint="@string/cariDoa"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:paddingStart="4dp"
+                android:paddingEnd="16dp"
+                android:imeOptions="actionSearch"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
