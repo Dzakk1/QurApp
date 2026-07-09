@@ -45,4 +45,7 @@
     <string name="tvTitleNumAyah">Ayat 01</string>
     <string name="tafsirDeskripsi">Alif Lam Mim. Ayat pertama surah Al-Baqarah ini terdiri dari huruf-huruf lepas.</string>
     <string name="doa">Doa</string>
+    <string name="searchbar_hint">Cari Doa</string>
+    <string name="namaDoa">Doa Sebelum Tidur</string>
+    <string name="kategoriDoa">Doa Tidur</string>
 </resources>
