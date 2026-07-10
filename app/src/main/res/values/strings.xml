@@ -50,4 +50,7 @@
     <string name="kategoriDoa">Doa Tidur</string>
     <string name="cariDoa">Cari doa...</string>
     <string name="doaDesc">Temukan doa harian dengan mudah</string>
+    <string name="DetailDoa">Detail Doa</string>
+    <string name="bacaan">Bacaan</string>
+    <string name="terjemahan">Terjemahan</string>
 </resources>

@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QurApp">
         <activity
+            android:name=".ui.activity.DetailDoa"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.DetailSurahActivity"
             android:exported="false" />
         <activity
