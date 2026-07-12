@@ -1,5 +1,6 @@
 package com.example.qurapp.retrofit
 
+import com.example.qurapp.response.DetailDoaResponse
 import com.example.qurapp.response.DetailSurahResponse
 import com.example.qurapp.response.DoaResponse
 import com.example.qurapp.response.SurahResponse
@@ -25,4 +26,9 @@ interface ApiService {
         @Query("grup") grup : String? = null,
         @Query("tag") tag : String? = null
     ) : Call<DoaResponse>
+
+    @GET("doa/{id}")
+    fun getDetailDoa(
+        @Path("id") id : Int) : Call<DetailDoaResponse>
+
 }

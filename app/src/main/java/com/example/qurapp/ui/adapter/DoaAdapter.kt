@@ -1,5 +1,6 @@
 package com.example.qurapp.ui.adapter
 
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.qurapp.databinding.DoaItemBinding
 import com.example.qurapp.response.DoaItem
+import com.example.qurapp.ui.activity.DetailDoaActivity
 
 class DoaAdapter : ListAdapter<DoaItem, DoaAdapter.MyViewHolder>(DIFF_CALLBACK) {
     override fun onCreateViewHolder(
@@ -29,7 +31,13 @@ class DoaAdapter : ListAdapter<DoaItem, DoaAdapter.MyViewHolder>(DIFF_CALLBACK) 
 //        clicked event
         holder.itemView.setOnClickListener {
             Log.d("Doa Adapter", "id = ${doa.id} clicked")
+
+            val intent = Intent(holder.itemView.context, DetailDoaActivity::class.java)
+            intent.putExtra(DetailDoaActivity.doaID, doa.id)
+            holder.itemView.context.startActivity(intent)
         }
+
+
     }
 
     class MyViewHolder(val binding: DoaItemBinding) : RecyclerView.ViewHolder(binding.root) {
