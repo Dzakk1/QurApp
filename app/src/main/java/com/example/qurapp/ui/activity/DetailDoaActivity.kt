@@ -74,12 +74,20 @@ class DetailDoaActivity : AppCompatActivity() {
         binding.cardView3.visibility = View.GONE
         binding.tvArab.visibility = View.GONE
         binding.tvArti.visibility = View.GONE
+        binding.materialCardView.visibility = View.GONE
+        binding.cardViewDoaArabic.visibility = View.GONE
+        binding.cardIconTerjemahan.visibility = View.GONE
+        binding.cardViewTerjemahan.visibility = View.GONE
     }
 
     private fun showData() {
         binding.cardView3.visibility = View.VISIBLE
         binding.tvArab.visibility = View.VISIBLE
         binding.tvArti.visibility = View.VISIBLE
+        binding.materialCardView.visibility = View.VISIBLE
+        binding.cardViewDoaArabic.visibility = View.VISIBLE
+        binding.cardIconTerjemahan.visibility = View.VISIBLE
+        binding.cardViewTerjemahan.visibility = View.VISIBLE
     }
 
     private fun showLoading(isLoading : Boolean) {
