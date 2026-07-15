@@ -1,5 +1,6 @@
 package com.example.qurapp.ui.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
@@ -10,7 +11,7 @@ import com.example.qurapp.databinding.HomeMenuItemBinding
 import com.example.qurapp.ui.adapter.AyahAdapter.MyViewHolder
 import com.example.qurapp.ui.model.HomeMenu
 
-class HomeMenuAdapter : ListAdapter<HomeMenu, HomeMenuAdapter.MyViewHolder>(DIFF_CALLBACK) {
+class HomeMenuAdapter (private val onClick : (HomeMenu) -> Unit): ListAdapter<HomeMenu, HomeMenuAdapter.MyViewHolder>(DIFF_CALLBACK) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -25,6 +26,13 @@ class HomeMenuAdapter : ListAdapter<HomeMenu, HomeMenuAdapter.MyViewHolder>(DIFF
     ) {
         val menu = getItem(posistion)
         holder.bind(menu)
+
+//        event click
+        holder.itemView.setOnClickListener {
+            Log.d("Home Adapter Menu Clicked", "idMenu = ${menu.title}")
+            onClick(menu)
+        }
+
     }
 
 

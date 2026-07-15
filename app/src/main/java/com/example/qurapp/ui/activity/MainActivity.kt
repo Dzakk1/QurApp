@@ -73,4 +73,34 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.fragment_container, fragment)
             .commit()
     }
+
+//    try navigate
+    fun navigateTo(menuId: Int) {
+
+        when(menuId){
+
+            1 -> binding.bottomNavigation.selectedItemId = R.id.nav_surah
+            2 -> binding.bottomNavigation.selectedItemId = R.id.nav_tafsir
+            3 -> binding.bottomNavigation.selectedItemId = R.id.nav_doa
+//            4 -> binding.bottomNavigation.selectedItemId = R.id.nav_prayer
+//            5 -> binding.bottomNavigation.selectedItemId = R.id.nav_qibla
+//            6 -> binding.bottomNavigation.selectedItemId = R.id.nav_bookmark
+
+
+
+
+//            1 -> replaceFragment(SurahFragment())
+//
+//            2 -> replaceFragment(TafsirFragment())
+//
+//            3 -> replaceFragment(DoaFragment())
+
+//            4 -> replaceFragment(PrayerFragment())
+//
+//            5 -> replaceFragment(QiblaFragment())
+//
+//            6 -> replaceFragment(BookmarkFragment())
+        }
+
+    }
 }

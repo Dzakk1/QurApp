@@ -1,5 +1,6 @@
 package com.example.qurapp.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.qurapp.R
 import com.example.qurapp.databinding.FragmentHomeBinding
+import com.example.qurapp.ui.activity.MainActivity
 import com.example.qurapp.ui.adapter.HomeMenuAdapter
 import com.example.qurapp.ui.adapter.SurahAdapter
 import com.example.qurapp.ui.model.HomeMenu
@@ -49,7 +51,12 @@ class HomeFragment : Fragment() {
         val layoutManager = GridLayoutManager(requireContext(), 3)
         binding.rvHomeMenu.layoutManager = layoutManager
 
-        adapter = HomeMenuAdapter()
+//        adapter = HomeMenuAdapter()
+
+
+        adapter = HomeMenuAdapter { menu ->
+            (requireContext() as MainActivity).navigateTo(menu.id)
+        }
         binding.rvHomeMenu.adapter = adapter
 
         val itemDecoration = DividerItemDecoration(requireContext(), layoutManager.orientation)
@@ -64,31 +71,37 @@ class HomeFragment : Fragment() {
         adapter.submitList(
             listOf(
                 HomeMenu(
+                    1,
                     "Quran",
                     R.drawable.import_contacts_20px,
                     R.drawable.menu_bg_green
                 ),
                 HomeMenu(
+                    2,
                     "Tafsir",
                     R.drawable.auto_stories_20px,
                     R.drawable.menu_bg_beige
                 ),
                 HomeMenu(
+                    3,
                     "Dua",
                     R.drawable.folded_hands_20px,
                     R.drawable.menu_bg_purple
                 ),
                 HomeMenu(
+                    4,
                     "Shalah Time",
                     R.drawable.prayer_times_20px,
                     R.drawable.menu_bg_pink
                 ),
                 HomeMenu(
+                    5,
                     "Qibla",
                     R.drawable.explore_20px,
                     R.drawable.menu_bg_pink
                 ),
                 HomeMenu(
+                    6,
                     "Bookmark",
                     R.drawable.bookmark_20px,
                     R.drawable.menu_bg_pink
