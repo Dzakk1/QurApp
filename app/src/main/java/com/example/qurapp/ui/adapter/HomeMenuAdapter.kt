@@ -40,6 +40,7 @@ class HomeMenuAdapter (private val onClick : (HomeMenu) -> Unit): ListAdapter<Ho
 
         fun bind (menu : HomeMenu) {
             binding.tvMenuName.text = menu.title
+            binding.tvDescMenu.text = menu.desc
             binding.iconMenu.setImageResource(menu.icon)
         }
     }

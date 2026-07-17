@@ -48,7 +48,21 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val layoutManager = GridLayoutManager(requireContext(), 3)
+//        val layoutManager = GridLayoutManager(requireContext(), 3)
+//        binding.rvHomeMenu.layoutManager = layoutManager
+
+
+        val layoutManager = GridLayoutManager(requireContext(), 2)
+
+        layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+            override fun getSpanSize(position: Int): Int {
+                return when (position) {
+                    2 -> 2   // Item ke-3 (Doa) memenuhi 2 kolom
+                    else -> 1 // Quran & Tafsir masing-masing 1 kolom
+                }
+            }
+        }
+
         binding.rvHomeMenu.layoutManager = layoutManager
 
 //        adapter = HomeMenuAdapter()
@@ -62,6 +76,7 @@ class HomeFragment : Fragment() {
         val itemDecoration = DividerItemDecoration(requireContext(), layoutManager.orientation)
         binding.rvHomeMenu.addItemDecoration(itemDecoration)
 
+
         Glide.with(this)
             .load(R.drawable.avatar)
             .circleCrop()
@@ -73,42 +88,24 @@ class HomeFragment : Fragment() {
                 HomeMenu(
                     1,
                     "Quran",
+                    "Baca Al-Qur'an",
                     R.drawable.import_contacts_20px,
                     R.drawable.menu_bg_green
                 ),
                 HomeMenu(
                     2,
                     "Tafsir",
+                    "Pahami makna ayat",
                     R.drawable.auto_stories_20px,
                     R.drawable.menu_bg_beige
                 ),
                 HomeMenu(
                     3,
                     "Dua",
+                    "Kumpulan doa harian untuk setiap muslim",
                     R.drawable.folded_hands_20px,
                     R.drawable.menu_bg_purple
                 ),
-                HomeMenu(
-                    4,
-                    "Shalah Time",
-                    R.drawable.prayer_times_20px,
-                    R.drawable.menu_bg_pink
-                ),
-                HomeMenu(
-                    5,
-                    "Qibla",
-                    R.drawable.explore_20px,
-                    R.drawable.menu_bg_pink
-                ),
-                HomeMenu(
-                    6,
-                    "Bookmark",
-                    R.drawable.bookmark_20px,
-                    R.drawable.menu_bg_pink
-                ),
-
-
-
             )
         )
 

@@ -1,44 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardViewHomeMenu"
-    android:layout_width="110dp"
-    android:layout_height="110dp"
-    android:layout_margin="10dp"
-    app:cardCornerRadius="16dp"
-    android:padding="12dp"
-    android:elevation="2dp"
-    android:layout_gravity="center">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="4dp"
+    app:strokeWidth="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:minHeight="120dp"
+        android:padding="16dp">
+
+        <!-- Icon Background -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/iconContainer"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/orangeYellowBg"
+            app:cardBackgroundColor="#F6F6F6"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iconMenu"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                tools:src="@drawable/import_contacts_20px" />
+
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:id="@+id/tvMenuName"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Quran"
+            android:textColor="#212121"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iconContainer"
+            app:layout_constraintTop_toTopOf="@+id/iconContainer" />
+
+        <TextView
+            android:id="@+id/tvDescMenu"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:fontFamily="@font/poppins_medium"
-            android:text="@string/menuQuran"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:gravity="center_horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/iconMenu"
-            app:layout_constraintStart_toStartOf="@+id/iconMenu"
-            app:layout_constraintTop_toBottomOf="@+id/iconMenu" />
+            android:ellipsize="end"
+            android:fontFamily="@font/poppinsregular"
+            android:maxLines="2"
+            android:text="Baca dan tadabbur Al-Qur'an"
+            android:textColor="#757575"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvMenuName"
+            app:layout_constraintTop_toBottomOf="@id/tvMenuName" />
 
         <ImageView
-            android:id="@+id/iconMenu"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="24dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginBottom="2dp"
+            android:src="@drawable/outline_arrow_forward_24"
+            android:tint="@color/primary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>
