@@ -22,26 +22,27 @@
         android:minHeight="120dp"
         android:padding="16dp">
 
-        <!-- Icon Background -->
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/iconContainer"
             android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_height="80dp"
             android:layout_marginTop="8dp"
-            android:backgroundTint="@color/orangeYellowBg"
+            android:backgroundTint="@color/white"
             app:cardBackgroundColor="#F6F6F6"
             app:cardCornerRadius="24dp"
             app:cardElevation="0dp"
+            app:strokeWidth="0dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/iconMenu"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_gravity="center"
-                android:scaleType="centerInside"
-                tools:src="@drawable/import_contacts_20px" />
+                android:layout_width="40dp"
+                android:layout_height="70dp"
+                android:scaleType="fitCenter"
+                android:layout_gravity="center_horizontal"
+                tools:src="@drawable/quran_3" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -51,9 +52,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:fontFamily="@font/poppins_medium"
-            android:text="Quran"
+            android:text="@string/AlQuran"
             android:textColor="#212121"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iconContainer"
@@ -63,26 +64,35 @@
             android:id="@+id/tvDescMenu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="1dp"
             android:ellipsize="end"
             android:fontFamily="@font/poppinsregular"
             android:maxLines="2"
-            android:text="Baca dan tadabbur Al-Qur'an"
+            android:text="@string/homeMenuDesc"
             android:textColor="#757575"
             android:textSize="11sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tvMenuName"
             app:layout_constraintTop_toBottomOf="@id/tvMenuName" />
 
-        <ImageView
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:layout_marginBottom="2dp"
-            android:src="@drawable/outline_arrow_forward_24"
-            android:tint="@color/primary"
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:cardCornerRadius="25dp"
+            android:backgroundTint="@color/primary"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent">
 
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/rounded_arrow_forward_ios_24"
+                app:tint="@color/white"
+                android:layout_gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </com.google.android.material.card.MaterialCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

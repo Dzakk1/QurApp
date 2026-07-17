@@ -88,22 +88,22 @@ class HomeFragment : Fragment() {
                 HomeMenu(
                     1,
                     "Quran",
-                    "Baca Al-Qur'an",
-                    R.drawable.import_contacts_20px,
+                    "Baca ayat Al-Qur'an",
+                    R.drawable.quran_3,
                     R.drawable.menu_bg_green
                 ),
                 HomeMenu(
                     2,
                     "Tafsir",
                     "Pahami makna ayat",
-                    R.drawable.auto_stories_20px,
+                    R.drawable.tafsir,
                     R.drawable.menu_bg_beige
                 ),
                 HomeMenu(
                     3,
                     "Dua",
-                    "Kumpulan doa harian untuk setiap muslim",
-                    R.drawable.folded_hands_20px,
+                    "Cari dan temukan Kumpulan doa harian untuk setiap muslim",
+                    R.drawable.pray,
                     R.drawable.menu_bg_purple
                 ),
             )
