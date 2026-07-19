@@ -22,6 +22,3 @@ class ApiConfig {
         }
     }
 }
-
-//https://equran.id/api/v2/surat
-//https://equran.id/api/doa
