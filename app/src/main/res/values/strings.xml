@@ -55,4 +55,5 @@
     <string name="terjemahan">Terjemahan</string>
     <string name="deskripsiMenu">Baca dan tadabbur ayat suci Al-Qur\'an</string>
     <string name="homeMenuDesc">Baca dan tadabbur Al-Qur\'an</string>
+    <string name="AccountMenu">Profile</string>
 </resources>
